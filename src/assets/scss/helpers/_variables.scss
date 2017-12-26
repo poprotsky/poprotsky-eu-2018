@@ -3,29 +3,34 @@
 // 
 
 // colors
-$key-color-1: #39c81d;
-$key-color-2: #29445a;
-$default-font-color: #000;
-$heading-color: #000;
-$bg-color-body: #FFF;
+$key-color-1: #101417;
+$key-color-2: #b5b4b4;
+
+$alt-color-1: #1f1e1e; // light black
+
+$gray: #5e5d5d;
+$gray-light: #f7f7f7;
+
+$default-font-color: $key-color-2;
+$heading-color: #20272d;
+$bg-color-body: #fff;
 
 // standard colors
 $color-accept: #2ecc71;
 $color-decline: #e74c3c;
 
 // font
-$default-font-family: 'Roboto', sans-serif;
+$default-font-family: 'Exo 2', sans-serif;
 $default-font-weight: 400;
 $default-font-weight-bold: 700;
-$default-font-size: 16px; 
-$default-lead-font-size: 18px;
+$default-font-size: 22px; 
+$default-lead-font-size: 26px;
 // icons
-$default-font-family-icon: 'ico-default';
-$project-font-family-icon: 'Icons';
+$project-font-family-icon: 'ico';
 
 // list
-$list-li-font-family: $default-font-family-icon;
-$list-li-icon-content: '\e020';
+$list-li-font-family: $project-font-family-icon;
+$list-li-icon-content: '';
 $list-li-icon-size: 13px;
 $list-li-icon-color: $key-color-1;
 $list-li-icon-top: 2px;
@@ -34,10 +39,10 @@ $list-li-icon-bottom: 5px;
 $list-li-icon-left: 0;
 
 // line-height
-$default-line-height: 1.35;
+$default-line-height: 1.4;
 
 // radius
-$default-radius: 3px;
+$default-radius: 0;
 
 // margin/padding
 $clear-padding: 0;
@@ -61,40 +66,40 @@ $selection-color: #fff;
 //
 // heading
 //
-$heading-weight: 300 !default;
+$heading-weight: 700 !default;
 $heading-line-height: 1.25;
 $heading-margin: 0 0 25px !default;
 
 // h1
-$heading-1-size: 36px !default;
+$heading-1-size: 50px !default;
 $heading-1-weight: $heading-weight;
 $heading-1-margin: $heading-margin;
 $heading-1-color: $heading-color;
 $heading-1-line-height: $heading-line-height;
 
 // h2
-$heading-2-size: 30px !default;
+$heading-2-size: 35px !default;
 $heading-2-weight: $heading-weight;
 $heading-2-margin: $heading-margin;
 $heading-2-color: $heading-color;
 $heading-2-line-height: $heading-line-height;
 
 // h3
-$heading-3-size: 26px !default;
+$heading-3-size: 30px !default;
 $heading-3-weight: $heading-weight;
 $heading-3-margin: $heading-margin;
 $heading-3-color: $heading-color;
 $heading-3-line-height: $heading-line-height;
 
 // h4
-$heading-4-size: 24px !default;
+$heading-4-size: 28px !default;
 $heading-4-weight: $heading-weight;
 $heading-4-margin: $heading-margin;
 $heading-4-color: $heading-color;
 $heading-4-line-height: $heading-line-height;
 
 // h5
-$heading-5-size: 22px !default;
+$heading-5-size: 26px !default;
 $heading-5-weight: $heading-weight;
 $heading-5-margin: $heading-margin;
 $heading-5-color: $heading-color;
@@ -110,14 +115,18 @@ $heading-6-line-height: $heading-line-height;
 // 
 // MEDIA QUERIES
 // 
-$xxs-max: 479px;
-$xs-min: 480px;
-$xs-max: 767px;
-$sm-min: 768px;
-$sm-max: 991px;
-$md-min: 992px;
-$md-max: 1199px;
-$lg-min: 1200px;
+$xxs-max: 767px;
+
+$xs-min: 768px;
+$xs-max: 967px;
+
+$sm-min: 968px;
+$sm-max: 1191px;
+
+$md-min: 1192px;
+$md-max: 1399px;
+
+$lg-min: 1400px;
 $lg-max: 1679px;
 
 $fullhd-limiter: 1920px;

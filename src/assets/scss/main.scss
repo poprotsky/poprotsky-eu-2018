@@ -1,12 +1,12 @@
 /*!
-Project: Iguana default front-end template;
-Authors: Mariusz Gałka, Damian Bonar, Eugeniusz Poprocki;
-Company: Iguana Sp. z o.o.;
+Project: Poprotsky.eu;
+Author: Eugene Poprotsky;
+Company: Poprotsky;
 
-Created date: 2016-10-18;
-Last update date: 2017-05-23;
+Created date: 2017-12-26;
+Last update date: 2017-12-26;
 
-Version: 0.9;
+Version: 1.0;
 */
 
 @import
@@ -15,7 +15,6 @@ Version: 0.9;
     'vendors/_flexboxgrid.scss',
     'vendors/_media-queries.scss',
     'vendors/_fancybox.scss',
-	'vendors/owl/_owl.carousel.scss',
 
     'helpers/_mixins.scss',
     'helpers/_helpers.scss',
@@ -26,20 +25,12 @@ Version: 0.9;
 
 	'components/_alerts.scss',
 	'components/_buttons.scss',
-	'components/_files.scss',
 	'components/_forms.scss',
     'components/_galleries.scss',
-    'components/_jcf-checkbox.scss',
-    'components/_jcf-radio.scss',
-	'components/_jcf-select.scss',
 	'components/_lists.scss',
-    'components/_maps.scss',
-    'components/_paginations.scss',
-	'components/_sliders.scss',
     'components/_wysiwyg.scss',
 
 	'layout/_grid.scss',
-	'layout/_breadcrumbs.scss',
     'layout/_header.scss',
     'layout/_footer.scss',
 

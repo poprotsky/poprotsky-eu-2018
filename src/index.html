@@ -2,62 +2,60 @@
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>Poprotsky</title>
 		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700&amp;subset=latin-ext" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.min.css">
+
 		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" href="assets/img/favicon/favicon-32x32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="assets/img/favicon/favicon-16x16.png" sizes="16x16">
 		<link rel="manifest" href="assets/img/favicon/manifest.json">
 		<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="theme-color" content="#ffffff">
+
 		<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
 	<body>
-		<header class="top" data-minimize-offset="300">
-			<div class="container">
-				<div class="flex flex--space-between flex--center-y">
-					<div class="top__logo"><a href="#"><img src="http://placehold.it/300x150" alt=""></a></div>
-					<div class="top__nav hidden-md">
-						<nav>
-							<ul>
-								<li><a href="#">Lorem ipsum</a></li>
-								<li><a href="#">Praesent sed</a></li>
-								<li><a href="#" class="active">Donec interdum</a></li>
-								<li><a href="#">Curabitur eget</a></li>
-								<li><a href="#">Cras commodo</a></li>
-							</ul>
-						</nav>
-					</div>
-					<div class="menu-trigger visible-md">
-						<span class="menu-trigger__inner">
-							<span></span><span></span><span></span><span></span><span></span><span></span>
-						</span>
-					</div>
+		
+		<header class="header">
+			<div class="header__main">
+				<a href="./" class="header__logo">
+					<img src="assets/img/logo.png" srcset="assets/img/logo.svg" alt="">
+				</a>
+				<div class="header__nav js-nav-trigger">
+					<span class="header__nav-icon">
+						<span></span>
+						<span></span>
+					</span>
 				</div>
+				<ul class="header__list">
+					<li class="header__list-item"><a href="#"><i class="ico ico-behance"></i></a></li>
+					<li class="header__list-item"><a href="#"><i class="ico ico-linkedin"></i></a></li>
+				</ul>
+			</div>
+
+			<div class="header__overlay">
+				<div class="header__overlay-top">
+					<div class="header__overlay-label">Poprotsky - Premium Web Design &amp; Development</div>
+					<a href="#" class="btn-arrow"><strong>Start</strong> project</a>
+				</div>
+				<ul class="header__overlay-nav">
+					<li><a href="#" class="is-active">Start</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Project</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<span class="bg-title bg-title--indark">Poprotsky</span>
 			</div>
 		</header>
-		<div class="slider owl-carousel">
-			<div class="slider__item" style="background-image: url('https://unsplash.it/2000/600?image=0')">
-				<div class="container">Slide 1</div>
-			</div>
-			<div class="slider__item" style="background-image: url('https://unsplash.it/2000/600?image=1')">
-				<div class="container">Slide 2</div>
-			</div>
-			<div class="slider__item" style="background-image: url('https://unsplash.it/2000/600?image=2')">
-				<div class="container">Slide 3</div>
-			</div>
-			<div class="slider__item" style="background-image: url('https://unsplash.it/2000/600?image=3')">
-				<div class="container">Slide 4</div>
-			</div>
-			<div class="slider__item" style="background-image: url('https://unsplash.it/2000/600?image=4')">
-				<div class="container">Slide 5</div>
-			</div>
-		</div>
+
 		<main class="main">
 			<section class="section">
 				<div class="container">
@@ -247,27 +245,6 @@
 					<div class="alert alert--warning"><strong>Donec sed vestibulum</strong> orci. Vivamus ac malesuada orci.</div>
 					<div class="alert alert--danger"><strong>Donec sed vestibulum</strong> orci. Vivamus ac malesuada orci.</div>
 
-					<h4>With icon</h4>
-
-
-					<div class="alert alert--icon alert--success alert--fixed">
-						<strong>Donec sed vestibulum</strong> orci. Vivamus ac malesuada orci
-					</div>
-
-					<div class="alert alert--icon alert--info">
-						<h4 class="alert__title">Donec sed vestibulum</h4>
-						<p>orci. Vivamus ac malesuada orci.</p>
-					</div>
-					<div class="alert alert--icon alert--warning"><strong>Donec sed vestibulum</strong> orci. Vivamus ac malesuada orci.</div>
-					<div class="alert alert--icon alert--danger">
-						<ul>
-							<li><strong>Lorem ipsum</strong> dolor sit amet.</li>
-							<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nostrum, ratione minus, numquam aut molestiae in soluta amet eius adipisci veniam hic velit, dicta consequatur error itaque placeat iure possimus.</li>
-							<li>Lorem ipsum dolor sit <strong>amet dolor.</strong></li>
-							<li>Lorem ipsum dolor sit amet.</li>
-						</ul>
-					</div>
-
 					<h2>Form</h2>
 					<form action="" method="post" class="form">
 						<div class="form__group static-control">
@@ -384,246 +361,34 @@
 					<div class="wysiwyg">
 						<p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Sed ultricies erat in turpis porttitor gravida. <strong>Nullam sit amet tortor</strong> in enim feugiat pharetra. Nullam vulputate vehicula fermentum. Curabitur urna nibh, interdum commodo gravida et, ullamcorper vel arcu. Etiam malesuada nibh ante, a porttitor purus bibendum in. Nam non ligula commodo, consectetur mi ut, tempus nisl. In elit lacus, tristique in euismod non, posuere quis ligula. Ut et velit tristique, placerat diam eget, tincidunt tellus. Sed ut vestibulum augue.</p>
 					</div>
-					<h2>Form horizontal</h2>
-					<form action="" method="post" class="form form--horizontal">
-						<div class="form__group">
-							<label for="f-" class="form__label">Donec sed vestibulum:</label>
-							<div class="form__field">
-								<div class="form__static-control">Lolek</div>
-							</div>
-						</div>
-						<div class="form__group">
-							<label for="f-" class="form__label">Donec sed vestibulum:</label>
-							<div class="form__field">
-								<input type="text" name="" placeholder="Vivamus ac malesuada" class="form__input" id="f-">
-								<div class="form__info">Example block-level help text here.</div>
-							</div>
-						</div>
-						<div class="form__group">
-							<label for="f-" class="form__label">Donec sed vestibulum:</label>
-							<div class="form__field">
-								<select name="" class="form__select" id="f-">
-									<option>-- Select --</option>
-									<option value="">Sed ultricies erat in turpis</option>
-									<option value="">Vivamus ac malesuada</option>
-									<option value="">Sed ultricies erat in turpis</option>
-									<option value="">Vivamus ac malesuada</option>
-									<option value="">Sed ultricies erat in turpis</option>
-									<option value="">Vivamus ac malesuada</option>
-								</select>
-							</div>
-						</div>
-						<div class="form__group">
-							<label for="f-" class="form__label">Donec sed vestibulum:</label>
-							<div class="form__field">
-								<div class="custom-select">
-									<select name="" class="form__select" id="f-">
-										<option>-- Select --</option>
-										<option value="">Sed ultricies erat in turpis</option>
-										<option value="">Vivamus ac malesuada</option>
-										<option value="">Sed ultricies erat in turpis</option>
-										<option value="">Vivamus ac malesuada</option>
-										<option value="">Sed ultricies erat in turpis</option>
-										<option value="">Vivamus ac malesuada</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<div class="form__group">
-							<div class="form__field">
-								<div class="checkbox">
-									<input type="checkbox" name="" id="f-" class="checkbox__input">
-									<div class="checkbox__text">
-										<label for="f-" class="checkbox__label">Donec sed vestibulum</label>
-									</div>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" name="" id="f-" class="checkbox__input">
-									<div class="checkbox__text">
-										<label for="f-" class="checkbox__label">Donec sed vestibulum</label>
-									</div>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" name="" id="f-" class="checkbox__input">
-									<div class="checkbox__text">
-										<label for="f-" class="checkbox__label">Donec sed vestibulum</label>
-									</div>
-								</div>
-								<div class="checkbox">
-									<input type="checkbox" name="" id="f-" class="checkbox__input">
-									<div class="checkbox__text">
-										<label for="f-" class="checkbox__label">Donec sed vestibulum</label>
-										<div class="checkbox__info">Excepteur sint occaecat cupidatat non.</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="form__group">
-							<div class="form__field">
-								<div class="radio">
-									<input type="radio" name="" id="f-" class="radio__input">
-									<div class="radio__text">
-										<label for="f-" class="radio__label">Donec sed vestibulum</label>
-									</div>
-								</div>
-								<div class="radio">
-									<input type="radio" name="" id="f-" class="radio__input">
-									<div class="radio__text">
-										<label for="f-" class="radio__label">Donec sed vestibulum</label>
-									</div>
-								</div>
-								<div class="radio">
-									<input type="radio" name="" id="f-" class="radio__input">
-									<div class="radio__text">
-										<label for="f-" class="radio__label">Donec sed vestibulum</label>
-										<div class="checkbox__info">Excepteur sint occaecat cupidatat non.</div>
-									</div>
-								</div>
-								<div class="radio">
-									<input type="radio" name="" id="f-" class="radio__input">
-									<div class="radio__text">
-										<label for="f-" class="radio__label">Donec sed vestibulum</label>
-										<div class="radio__info">Excepteur sint occaecat cupidatat non.</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class="form__group">
-							<label for="f-" class="form__label">Donec sed vestibulum:</label>
-							<div class="form__field">
-								<textarea name="" rows="5" class="form__input" id="f-" placeholder="Vivamus ac malesuada"></textarea>
-							</div>
-						</div>
-						<div class="form__actions">
-							<button class="btn">Sed ultricies erat</button>
-						</div>
-					</form>
 					<div class="wysiwyg">
 						<p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Sed ultricies erat in turpis porttitor gravida. <strong>Nullam sit amet tortor</strong> in enim feugiat pharetra. Nullam vulputate vehicula fermentum. Curabitur urna nibh, interdum commodo gravida et, ullamcorper vel arcu. Etiam malesuada nibh ante, a porttitor purus bibendum in. Nam non ligula commodo, consectetur mi ut, tempus nisl. In elit lacus, tristique in euismod non, posuere quis ligula. Ut et velit tristique, placerat diam eget, tincidunt tellus. Sed ut vestibulum augue.</p>
 					</div>
 
-					<section class="gallery">
-					    	<h3 class="gallery__title">Gallery</h3>
-						<div class="gallery__list">
-							<div class="row gutter-10">
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--icon-zoom-out" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--icon-zoom-out" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--icon-zoom-out" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--icon-zoom-out" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--img-zoom-in thumbnail--icon-slide" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--img-zoom-in thumbnail--icon-slide" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--img-zoom-in thumbnail--icon-slide" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-								<div class="col-lg-3 col-md-4 col-xxs-6">
-								    <a href="http://pipsum.com/1200x800.jpg" class="thumbnail thumbnail--mb-10 thumbnail--img-zoom-in thumbnail--icon-slide" data-fancybox="gallery"><i class="ico-default ico-default-search"></i><img alt="Tytuł zdjęcia" src="http://pipsum.com/600x450.jpg"></a>
-								</div>
-							</div>
-					    	</div>
-					</section>
-
-					<!-- <section class="download-section">
-						<h2>Files</h2>
-						<ul class="download">
-							<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit <span>(1,51mb)</span></a></li>
-							<li><a href="#">Dolorum dicta modi culpa eveniet earum <span>(2,16mb)</span></a></li>
-							<li><a href="#">Fuga pariatur tempora dignissimos eos <span>(6,71mb)</span></a></li>
-							<li><a href="#">Voluptatibus incidunt quos minus sint quam, accusamus eum expedita ab <span>(7,22mb)</span></a></li>
-							<li><a href="#">Lorem ipsum dolor tempora dignissimos <span>(4,63mb)</span></a></li>
-						</ul>
-					</section> -->
-
-					<section class="files">
-						<h2 class="files__title">Files</h2>
-						<ul class="files__list">
-							<li class="files__list-item">
-								<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit <span class="files__list-item-info">(1,51mb)</span></a>
-							</li>
-							<li class="files__list-item">
-								<a href="#">Dolorum dicta modi culpa eveniet earum <span class="files__list-item-info">(2,16mb)</span></a>
-							</li>
-							<li class="files__list-item">
-								<a href="#">Fuga pariatur tempora dignissimos eos <span class="files__list-item-info">(6,71mb)</span></a>
-							</li>
-							<li class="files__list-item">
-								<a href="#">Voluptatibus incidunt quos minus sint quam, accusamus eum expedita ab <span class="files__list-item-info">(7,22mb)</span></a>
-							</li>
-							<li class="files__list-item">
-								<a href="#">Lorem ipsum dolor tempora dignissimos <span class="files__list-item-info">(4,63mb)</span></a>
-							</li>
-						</ul>
-					</section>
-
-					<h2>Pagination</h2>
-					<div class="pagination">
-						<ol>
-							<li class="pagination__prev is-disabled"><a href="#"><i class="ico-default ico-default-chevron-left"></i></a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li class="is-active"><span>4</span></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">6</a></li>
-							<li><em>...</em></li>
-							<li><a href="#">7</a></li>
-							<li class="pagination__next"><a href="#"><i class="ico-default ico-default-chevron-right"></i></a></li>
-						</ol>
-					</div>
-
-					<h2>Default icons</h2>
+					<h2>Project icons</h2>
 					<div style="font-size: 58px;">
-						<i class="ico-default ico-default-email"></i>
-						<i class="ico-default ico-default-phone"></i>
-						<i class="ico-default ico-default-mobile-phone"></i>
-						<i class="ico-default ico-default-file"></i>
-						<i class="ico-default ico-default-search"></i>
-						<i class="ico-default ico-default-info-label"></i>
-						<i class="ico-default ico-default-warning-label"></i>
-						<i class="ico-default ico-default-danger-label"></i>
+						<i class="ico ico-arrow-left"></i>
+						<i class="ico ico-arrow-right"></i>
 
-						<i class="ico-default ico-default-success-label"></i>
-						<i class="ico-default ico-default-basket"></i>
-						<i class="ico-default ico-default-cross"></i>
-						<i class="ico-default ico-default-star"></i>
-						<i class="ico-default ico-default-basket-alt"></i>
-						<i class="ico-default ico-default-user"></i>
-						<i class="ico-default ico-default-arrow"></i>
-						<i class="ico-default ico-default-arrow-bold"></i>
+						<i class="ico ico-behance"></i>
+						<i class="ico ico-linkedin"></i>
 
-						<i class="ico-default ico-default-chevron-thin-up"></i>
-						<i class="ico-default ico-default-chevron-thin-right"></i>
-						<i class="ico-default ico-default-chevron-thin-left"></i>
-						<i class="ico-default ico-default-chevron-thin-down"></i>
-						<i class="ico-default ico-default-chevron-right"></i>
-						<i class="ico-default ico-default-chevron-left"></i>
-						<i class="ico-default ico-default-chevron-down"></i>
-						<i class="ico-default ico-default-chevron-up"></i>
+						<i class="ico ico-branding"></i>
+						<i class="ico ico-website"></i>
+						<i class="ico ico-portal"></i>
+						<i class="ico ico-e-commerce"></i>
+						<i class="ico ico-webapp"></i>
+						<i class="ico ico-mobileapp"></i>
+
+						<i class="ico ico-check"></i>
+						<i class="ico ico-cross"></i>
+
+						<i class="ico ico-design"></i>
+						<i class="ico ico-development"></i>
 					</div>
 				</div>
 			</section>
 		</main>
-
-		<footer class="footer">
-			<div class="container">
-				<div class="flex flex--space-between">
-					<p class="footer__copy">&copy; Nazwa projektu</p>
-					<p class="footer__create">Projekt i realizacja: Iguana Studio <a href="https://www.iguanastudio.pl" target="_blank">Agencja Reklamowa</a></p>
-				</div>
-			</div>
-		</footer>
 
 		<script src="assets/js/vendor.min.js"></script>
 		<script src="assets/js/main.min.js"></script>

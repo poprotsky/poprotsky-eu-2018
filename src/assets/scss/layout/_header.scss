@@ -1,253 +1,311 @@
-.top {
-	background-color: #f9fafc;
-	padding: 30px 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 500;
-	box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-	@include transition();
-
-	.is-top-minimize & {
-		padding: 15px 0;
-
-		&__logo {
-			max-width: 115px;
-		}
-	}
-
-	&__logo {
-		margin-right: 30px;
-		max-width: 150px;
-		@include transition();
-
-		a {
-			@include hover() {
-				img {
-					opacity: 0.5;
-				}
-			}
-		}
-
-		img {
-			@include transition();
+.header {
+	&__main {
+		@extend .flex, .flex--column, .flex--space-between, .flex--center-x, .flex--nowrap;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+		width: 100px;
+		height: inherit;
+		background-color: $key-color-1;
+		transition: background-color .3s ease .3s;
+		@include max-screen($xs-max) {
+			flex-flow: row nowrap;
+			right: 0;
 			width: 100%;
+			height: 100px;
+			.is-nav-open & {
+				background-color: transparent;
+			}
+		}
+		@include max-screen($xxs-max) {
+			height: 70px;
 		}
 	}
-
+	&__logo {
+		@extend .flex, .flex--center;
+		width: 100px;
+		height: 100px;
+		@include transition();
+		@include max-screen($xs-max) {
+			flex: 0 0 100px;
+		}
+		@include max-screen($xxs-max) {
+			height: 70px;
+			flex: 0 0 70px;
+		}
+		@include hover() {
+			background-color: $alt-color-1;
+		}
+		img {
+			width: 24px;
+			@include transition();
+			@include max-screen($xxs-max) {
+				width: 20px;
+			}
+		}
+	}
 	&__nav {
-		ul {
-			li {
-				float: left;
-				position: relative;
-
-				a {
-					display: block;
-					color: $default-font-color;
-					padding: 10px 0;
-					@include hover() {
-						color: $key-color-1;
-					}
-
-					&.active {
-						font-weight: 700;
-						color: $key-color-1;
+		@extend .flex, .flex--column, .flex--center, .flex--nowrap;
+		width: 100%;
+		height: 100px;
+		cursor: pointer;
+		@include transition();
+		@include max-screen($xs-max) {
+			flex: 0 0 100px;
+		}
+		@include max-screen($xxs-max) {
+			flex: 0 0 70px;
+			height: 70px; 
+		}
+		@include hover() {
+			background-color: $alt-color-1;
+			.header__nav-icon {
+				> span {
+					width: 26px;
+					&::before {
+						width: 26px;
 					}
 				}
 			}
-
-			li + li {
-				margin-left: 50px;
+		}
+		.is-nav-open & {
+			@include hover() {
+				.header__nav-icon {
+					> span {
+						transform: rotate(0);
+						&:last-child {
+							transform: rotate(0);
+						}
+					}
+				}
+			}
+			.header__nav-icon {
+				> span {
+					transform: rotate(45deg);
+					margin-bottom: -2px;
+					width: 26px;
+					&:last-child {
+						transform: rotate(-45deg);
+					}
+					&::before {
+						opacity: 0;
+					}
+				}
 			}
 		}
-	}
-
-}
-
-.menu-trigger {
-	display: none;
-	width: 50px;
-	height: 50px;
-	position: relative;
-	cursor: pointer;
-	float: right;
-	overflow: hidden;
-	border-radius: 50%;
-	background: $key-color-1;
-	@include transition(all,.5s,ease-in-out);
-	@include rotate(0);
-    z-index: 810;
-	
-	&__inner {
-		margin: 12px;
-		position: relative;
-		display: block;
-		width: 26px;
-		height: 26px;
-		
-		span {
-			display: block;
-			position: absolute;
-			height: 4px;
-			width: 50%;
-			background: #FFF;
-			opacity: 1;
-			@include transition(all,.25s,ease-in-out);
-			@include rotate(0);
-			&:nth-child(even) {
-				right: 0;
-				border-radius: 0 4px 4px 0;
-			}
-			&:nth-child(odd) {
-				left: 0;
-				border-radius: 4px 0 0 4px;
-			}
-			&:nth-child(1),
-			&:nth-child(2) {
-				top: 2px;
-			}
-			&:nth-child(3),
-			&:nth-child(4) {
-				top: 11px;
-			}
-			&:nth-child(4) {
-				right: auto;
-				left: 50%;
-			}
-			&:nth-child(5),
-			&:nth-child(6) {
-				top: 20px;
-			}
-		}
-	}
-    
-    .is-menu-open & {
-		&__inner span {
-			&:nth-child(1),
-			&:nth-child(6) {
-				@include rotate(45);
-			}
-			&:nth-child(2),
-			&:nth-child(5) {
-				@include rotate(-45);
-			}
-			&:nth-child(1) {
-				left: 3px;
-				top: 8px;
-			}
-			&:nth-child(2) {
-				right: 3px;
-				left: auto;
-				top: 8px;
-			}
-			&:nth-child(3) {
-				left: -50%;
-				opacity: 0;
-			}
-			&:nth-child(4) {
-				left: 100%;
-				opacity: 0;
-			}
-			&:nth-child(5) {
-				left: 3px;
-				top: 15px;
-			}
-			&:nth-child(6) {
-				right: 3px;
-				left: auto;
-				top: 15px;
-			}
-		}
-	}
-	
-	&--small {
-		width: 40px;
-		height: 40px;
-		
-		.menu-trigger {
-			&__inner {
-				margin: 10px;
+		&-icon {
+			> span {
 				position: relative;
 				display: block;
-				width: 20px;
-				height: 20px;
-
-				span {
+				width: 26px;
+				height: 2px;
+				background-color: #fff;
+				margin-bottom: 12px;
+				@include transition();
+				@include max-screen($xxs-max) {
+					width: 23px;
+				}
+				&::before {
+					content: '';
 					display: block;
 					position: absolute;
-					height: 3px;
-					width: 50%;
-					background: #FFF;
-					opacity: 1;
-					@include transition(all,.25s,ease-in-out);
-					@include rotate(0);
-
-					&:nth-child(even) {
-						right: 0;
-						border-radius: 0 3px 3px 0;
+					top: 7px;
+					width: 20px;
+					height: 2px;
+					background-color: #fff;
+					@include transition();
+				}
+				&:last-child {
+					width: 23px;
+					@include max-screen($xxs-max) {
+						margin-bottom: 0;
 					}
-					&:nth-child(odd) {
-						left: 0;
-						border-radius: 3px 0 0 3px;
-					}
-					&:nth-child(1),
-					&:nth-child(2) {
-						top: 2px;
-					}
-					&:nth-child(3),
-					&:nth-child(4) {
-						top: 9px;
-					}
-					&:nth-child(4) {
-						right: auto;
-						left: 50%;
-					}
-					&:nth-child(5),
-					&:nth-child(6) {
-						top: 16px;
+					&::before {
+						width: 13px;
+						@include max-screen($xxs-max) {
+							display: none;
+						}
 					}
 				}
 			}
-
-            .is-menu-open & {
-                &__inner span {
-                    &:nth-child(1),
-                    &:nth-child(6) {
-                        @include rotate(45);
-                    }
-                    &:nth-child(2),
-                    &:nth-child(5) {
-                        @include rotate(-45);
-                    }
-                    &:nth-child(1) {
-                        left: 2px;
-                        top: 6px;
-                    }
-                    &:nth-child(2) {
-                        right: 2px;
-                        left: auto;
-                        top: 6px;
-                    }
-                    &:nth-child(3) {
-                        left: -50%;
-                        opacity: 0;
-                    }
-                    &:nth-child(4) {
-                        left: 100%;
-                        opacity: 0;
-                    }
-                    &:nth-child(5) {
-                        left: 2px;
-                        top: 12px;
-                    }
-                    &:nth-child(6) {
-                        right: 2px;
-                        left: auto;
-                        top: 12px;
-                    }
-                }
-            } 
 		}
-
+	}
+	&__list {
+		@extend .flex, .flex--column, .flex--center, .flex--nowrap;
+		width: 100%;
+		@include max-screen($xs-max) {
+			display: none;
+		}
+		&-item {
+			width: 100%;
+			> a {
+				text-align: center;
+				width: 100%;
+				display: block;
+				padding: 20px;
+				@include hover() {
+					background-color: $alt-color-1;
+				}
+			}
+			.ico {
+				display: block;
+				font-size: 18px;
+				color: #fff;
+				
+			}
+		}
+	}
+	// menu open
+	&__overlay {
+		@extend .flex, .flex--center-y;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		background-color: $key-color-1;
+		transform: translateX(-100%);
+		transition: .6s ease .4s;
+		@include max-screen($xs-max) {
+			transform: translateY(-100%);
+		}
+		.is-nav-open & {
+			transform: translateX(0);
+			transition: .6s ease 0s;
+			@include max-screen($xs-max) {
+				transform: translateY(0);
+			}
+		}
+		&-nav {
+			@extend .flex, .flex--column, .flex--nowrap;
+			position: relative;
+			z-index: 1;
+			padding-left: 22vw;
+			opacity: 0;
+			transition: opacity .7s ease 0s;
+			user-select: none;
+			@include max-screen($xs-max) {
+				padding-left: 0;
+				width: 100%;
+				align-items: center;
+			}
+			.is-nav-open & {
+				opacity: 1;
+				transition: opacity .7s ease .5s;
+			} 
+			li {
+				margin: 0;
+				transition: margin .7s ease 0s;
+				.is-nav-open & {
+					margin: 2vh 0;
+					transition: margin .7s ease .3s;
+					@include max-screen($xs-max) {
+						margin: 1.5vh 0;
+					}
+				}
+				a {
+					display: inline-block;
+					position: relative;
+					font-size: 40px;
+					font-weight: 400;
+					line-height: 1;
+					color: $gray;
+					@include max-screen($xs-max) {
+						font-size: 30px;
+						text-align: center;
+					}
+					@include hover() {
+						color: #fff;
+					}
+					&.is-active {
+						color: #fff;
+						font-weight: 600;
+						&::before {
+							content: '';
+							position: absolute;
+							top: 50%;
+							left: -70px;
+							width: 36px;
+							height: 4px;
+							background-color: #fff;
+							transform: translateY(-50%);
+							@include max-screen($xs-max) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		&-top {
+			@extend .flex, .flex--space-between, .flex--center-y, .flex--nowrap;
+			position: absolute;
+			top: 0;
+			left: 130px;
+			right: 40px;
+			padding-top: 37px;
+			opacity: 0;
+			transition: opacity .7s ease 0s;
+			@include max-screen($xs-max) {
+				display: none;
+			}
+			.is-nav-open & {
+				opacity: 1;
+				transition: opacity .7s ease 1s;
+			}
+			.btn-arrow {
+				display: block;
+				color: #fff;
+				font-size: 22px;
+				font-weight: 400;
+				padding-right: 40px;
+				position: relative;
+				line-height: 1.2;
+				@include hover() {
+					&::before {
+						transform: translateX(5px) translateY(-50%);
+					}
+				}
+				&::before {
+					content: '\e901';
+					font-family: $project-font-family-icon;
+					font-size: 20px;
+					position: absolute;
+					top: 57%;
+					right: 0;
+					transform: translateY(-50%);
+					@include transition();
+				}
+				strong {
+					font-weight: 600;
+				}
+			}
+		}
+		&-label {
+			color: $gray;
+			font-size: 18px;
+			line-height: 1;
+		}
+		.bg-title {
+			line-height: 1;
+			position: absolute;
+			bottom: 0;
+			left: 20.85vw;
+			transform: translateY(30%);
+			z-index: 0;
+			opacity: 0;
+			transition: opacity .7s ease 0s;
+			@include max-screen($xs-max) {
+				left: 0;
+				font-size: 150px;
+			}
+			.is-nav-open & {
+				opacity: 1;
+				transition: opacity .7s ease 1s;
+			}
+		}
 	}
 }

@@ -12,6 +12,9 @@
 html,
 body {
     overflow-x: hidden;
+    &.is-nav-open {
+        overflow: hidden;
+    }
 }
 
 html {
@@ -30,7 +33,14 @@ body {
     -webkit-appearance: none;
     background: $bg-color-body;
     @include transition(padding-top);
-	padding-top: 135px;
+	padding-left: 100px;
+    @include max-screen($xs-max) {
+        padding-left: 0;
+        padding-top: 100px;
+    }
+    @include max-screen($xxs-max) {
+        padding-top: 70px;
+    }
 }
 
 h1,
