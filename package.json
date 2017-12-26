@@ -1,0 +1,25 @@
+{
+  "name": "Poprotsky.eu",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.17.3",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.0",
+    "postcss-pxtorem": "^4.0.0"
+  },
+  "author": "Eugene Poprotsky",
+  "repository": {
+    "type": "git",
+    "url": "https://eupoprotsky@bitbucket.org/eupoprotsky/poprotsky.eu.git"
+  }
+}
