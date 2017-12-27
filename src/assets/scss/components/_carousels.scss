@@ -1,0 +1,87 @@
+.carousel {
+    .owl-stage-outer {
+        overflow: hidden;        
+    }
+    .owl-stage {
+        @extend .flex, .flex--nowrap, .flex--stretch;
+        .owl-item {
+            @extend .flex, .flex--stretch;
+        }
+    }
+}
+// nav
+.owl-nav {
+    position: absolute;
+    z-index: 2;
+    @extend .flex, .flex--nowrap;
+    > .owl-prev,
+    > .owl-next {
+        @extend .flex, .flex--center;
+        position: relative;
+        width: 70px;
+        height: 70px;
+        background-color: #fff;
+        color: $key-color-1;
+        font-size: 18px;
+        cursor: pointer;
+        overflow: hidden;
+        .ico {
+            @include transition();
+        }
+    }
+    > .owl-prev {
+        @include hover() {
+            .ico {
+                transform: translateX(-70px);
+            }
+            &::before {
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+        &::before {
+            content: '\e900';
+            font-family: $project-font-family-icon;
+            position: absolute;
+            top: 50%;
+            font-size: interit;
+            transform: translateY(-50%) translateX(70px) translateZ(0);
+            @include transition();
+        }
+    }
+    > .owl-next {
+        @include hover() {
+            .ico {
+                transform: translateX(70px);
+            }
+            &::before {
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+        &::before {
+            content: '\e901';
+            font-family: $project-font-family-icon;
+            position: absolute;
+            top: 50%;
+            font-size: interit;
+            font-weight: inherit;
+            transform: translateY(-50%) translateX(-70px) translateZ(0);
+            @include transition();
+        }
+    }
+    .carousel--nav-top-left & {
+        top: 0;
+        left: 0;
+    }
+    .carousel--nav-top-right & {
+        top: 0;
+        right: 0;
+    }
+    .carousel--nav-bottom-left & {
+        bottom: 0;
+        left: 0;
+    }
+    .carousel--nav-bottom-right & {
+        bottom: 0;
+        right: 0;
+    }
+}

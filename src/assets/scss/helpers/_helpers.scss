@@ -1055,55 +1055,33 @@
 //
 .padding-clear {
     padding: 0 !important;
+    &--top {
+        padding-top: 0 !important;
+    }
+    &--right {
+        padding-right: 0 !important;
+    }
+    &--bottom {
+        padding-bottom: 0 !important;
+    }
+    &--left {
+        padding-left: 0 !important;
+    }
 }
 
 .margin-clear {
     margin: 0 !important;
-}
-
-.cmt {
-	margin-top: 0 !important;	
-}
-
-.cmr {
-	margin-right: 0 !important;	
-}
-
-.cmb {
-	margin-bottom: 0 !important;	
-}
-
-.cml {
-	margin-left: 0 !important;	
-}
-
-.cpt {
-	padding-top: 0 !important;	
-}
-
-.cpr {
-	padding-right: 0 !important;	
-}
-
-.cpb {
-	padding-bottom: 0 !important;	
-}
-
-.cpl {
-	padding-left: 0 !important;	
-}
-
-//
-// clearfix
-//
-.cf {
-    &:before,
-    &:after {
-        content: '';
-        display: table;
+    &--top {
+        margin-top: 0 !important;
     }
-    &:after {
-        clear: both;
+    &--right {
+        margin-right: 0 !important;
+    }
+    &--bottom {
+        margin-bottom: 0 !important;
+    }
+    &--left {
+        margin-left: 0 !important;
     }
 }
 
@@ -1189,54 +1167,3 @@
 	}
 }
 
-//
-// preloaders
-//
-*[data-preload] {
-	visibility: hidden;
-
-	&.loaded {
-		visibility: visible;
-	}
-}
-
-*[data-preloader] {
-	height: 500px;
-	overflow: hidden;
-	position: relative;
-
-	@include max-screen($sm-max) {
-		height: 400px;
-	}
-
-	@include max-screen($xs-max) {
-		height: 300px;
-	}
-
-	&:before {
-		@include pseudo;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 100;
-		background: #fff url("../img/preloader.gif") no-repeat center center;
-	}
-
-	&.loaded {
-		height: auto !important;
-		overflow: visible;
-
-		&:before {
-			display: none;
-		}
-	}
-}
-
-//
-// rwd menu helper
-//
-html.is-menu-open,
-.is-menu-open body {
-	overflow-y: hidden;
-}

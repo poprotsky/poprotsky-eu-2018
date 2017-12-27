@@ -2,8 +2,54 @@
 	font-size: $default-lead-font-size;
 }
 
+.relative {
+    position: relative;
+}
+
 .section {
-	padding: 30px 0;
+    padding: 150px 0;
+    @include max-screen($md-max) {
+        padding: 100px 0;
+    }
+    @include max-screen($xs-max) {
+        padding: 80px 0;
+    }
+    &--s {
+        width: 68vw;
+        @include max-screen($xlg-max) {
+            width: 73vw;
+        }
+        @include max-screen($md-max) {
+            width: 78vw;
+        }
+        @include max-screen($xs-max) {
+            width: 83vw;
+        }
+    }
+    &--m {
+        width: 76vw;
+        @include max-screen($xlg-max) {
+            width: 81vw;
+        }
+        @include max-screen($md-max) {
+            width: 86vw;
+        }
+        @include max-screen($xs-max) {
+            width: 96vw;
+        }
+    }
+    &--l {
+        width: 87vw;
+        @include max-screen($xlg-max) {
+            width: 90vw;
+        }
+        @include max-screen($md-max) {
+            width: 87vw;
+        }
+        @include max-screen($xs-max) {
+            width: 93vw;
+        }
+    }
 }
 
 // .main {
@@ -15,11 +61,219 @@
 // }
 
 .bg-title {
-    font-size: 350px;
+    position: absolute;
+    font-size: 18vw; // 350px
     font-weight: 400;
     color: rgba($key-color-2, .07);
+    line-height: 1;
     @extend .disabled;
     &--indark {
         color: rgba($key-color-2, .03);
+    }
+}
+
+.heading {
+    @extend .flex, .flex--end-y, .flex--space-between, .flex--nowrap;
+    margin-bottom: 60px;
+    @include max-screen($xs-max) {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+    &__left {
+        @extend .flex, .flex--column, .flex--nowrap;
+    }
+    &__right {
+        flex: 0 0 auto;
+        margin-left: 50px;
+        @include max-screen($xs-max) {
+            margin-left: 0;
+        }
+        .btn-arrow {
+            @include max-screen($xs-max) {
+                margin-top: 30px;
+                margin-left: 5px;
+            }
+        }
+    }
+    &__subtitle {
+        display: block;
+        font-size: 30px;
+        font-weight: 400;
+        color: $key-color-2;
+        line-height: 1;
+        margin-bottom: 5px;
+        @include max-screen($md-max) {
+            font-size: 26px;
+        }
+        @include max-screen($xs-max) {
+            font-size: 22px;
+        }
+    }
+    &__title {
+        display: block;
+        font-size: 50px;
+        font-weight: 700;
+        color: $heading-color;
+        line-height: 1;
+        @include max-screen($md-max) {
+            font-size: 45px;
+        }
+        @include max-screen($xs-max) {
+            font-size: 40px;
+        }
+    }
+    &__desc {
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 0;
+        color: $key-color-2;
+        font-size: 26px;
+        font-weight: 400;
+        @include max-screen($xs-max) {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+    }
+}
+
+.double-section {
+    @extend .flex, .flex--column;
+    position: relative;
+    margin-bottom: 100px;
+    @include max-screen($xs-max) {
+        margin-bottom: 80px;
+    }
+    &--empty-bottom {
+        &::before {
+            content: '';
+            @extend .section--m;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            bottom: -100px;
+            background-color: $gray-light;
+            z-index: 1;
+            @include max-screen($xs-max) {
+                top: 80px;
+                bottom: -80px;
+            }
+        }
+    }
+    &__top {
+        padding: 100px;
+        position: relative;
+        align-self: flex-end;
+        z-index: 2;
+        @include max-screen($md-max) {
+            padding: 80px;
+        }
+        @include max-screen($xs-max) {
+            padding: 50px;
+        }
+        @include max-screen($xxs-max) {
+            padding: 40px;
+        }
+        &--dark {
+            background-color: $key-color-1;
+        }
+    }
+    .heading {
+        margin-bottom: 100px;
+        @include max-screen($xs-max) {
+            margin-bottom: 50px;
+        }
+        &__title {
+            color: #fff;
+            font-weight: 400;
+        }
+        &__subtitle {
+            color: $gray;
+        }
+        .btn-arrow {
+            color: $gray;
+            &::before {
+                transition: transform .3s ease-out;
+            }
+            @include hover() {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.list-icon-row {
+    @extend .flex, .flex--nowrap;
+    @include max-screen($xxs-max) {
+        flex-flow: column nowrap;
+    }
+}
+
+.list-icon {
+    @extend .flex, .flex--nowrap;
+    flex: 0 1 50%;
+    @include max-screen($xxs-max) {
+        margin-bottom: 50px;
+    }
+    @include max-screen($xxs-min) {
+        flex-flow: column nowrap;
+    }
+    > .ico {
+        color: #fff;
+        font-size: 70px;
+        margin-right: 3vw;
+        @include max-screen($xs-max) {
+            font-size: 55px;
+        }
+        @include max-screen($xxs-max) {
+            margin-right: 8vw;
+        }
+        @include max-screen($xxs-min) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    &__list {
+        li {
+            padding-right: 1.5vw;
+            color: $gray;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+    }
+    &__title {
+        color: #fff !important;
+        font-size: 30px !important;
+        font-weight: 600 !important;
+        margin-top: 20px !important;
+        margin-bottom: 30px !important;
+        @include max-screen($xs-max) {
+            margin-top: 15px !important;
+            font-size: 26px !important; 
+        }
+        a {
+            position: relative;
+            color: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 60%;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: #fff;
+                transform: translateY(-50%);
+                @include transition();
+            }
+            @include hover() {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

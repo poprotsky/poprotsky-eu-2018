@@ -1,19 +1,195 @@
 .footer {
-	background-color: #29445a;
-	color: #FFF;
-	font-size: 14px;
-	padding: 30px 0;
-	
-	p {
-		margin-bottom: 0;
+	position: relative;
+	z-index: 2;
+	&__top {
+		@extend .flex, .flex--end-x;
+		position: relative;
+		z-index: 2;
+		&-left {
+			width: 100%;
+		}
+		&-inner {
+			@extend .flex, .flex--center-y, .flex--space-between, .flex--nowrap;
+			padding: 100px;
+			background-color: $key-color-1;
+			@include max-screen($md-max) {
+				padding: 80px;
+			}
+			@include max-screen($xs-max) {
+				padding: 50px;
+				flex-flow: column nowrap;
+				align-items: flex-start;
+			}
+			@include max-screen($xxs-max) {
+				padding: 40px;
+			}
+			.btn-arrow {
+				font-size: 24px;
+				color: #fff;
+				flex: 1 0 auto;
+				@include max-screen($md-max) {
+					font-size: 20px;
+				}
+				@include max-screen($xxs-max) {
+					width: 100%;
+					text-align: center;
+					padding: 0;
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+		&-subtitle {
+			display: block;
+			color: $gray;
+			font-size: 20px;
+			font-weight: 400;
+			margin-bottom: 5px;
+			line-height: 1;
+			@include max-screen($md-max) {
+				font-size: 18px;
+			}
+			@include max-screen($xxs-max) {
+				font-size: 16px;
+				text-align: center;
+			}
+		}
+		&-title {
+			display: inline-block;
+			width: 100%;
+			color: #fff !important;
+			font-size: 35px;
+			font-weight: 400;
+			margin-bottom: 0;
+			line-height: 1;
+			@include max-screen($md-max) {
+				font-size: 30px;
+			}
+			@include max-screen($xs-max) {
+				margin-bottom: 30px;
+			}
+			@include max-screen($xxs-max) {
+				font-size: 24px;
+				text-align: center;
+			}
+		}
 	}
-	
-	&__copy {
-		margin-right: 30px;
-		padding: 3px 0;
+	&__middle {
+		padding: 50px 0;
+		@include max-screen($xs-max) {
+			padding: 50px 15px;
+		}
 	}
-	
-	&__create {
-		padding: 3px 0;
+	&__title {
+		display: block;
+		color: $key-color-1;
+		font-size: 26px;
+		font-weight: 600;
+		margin: 50px 20px 20px 0;
+		@include max-screen($xxs-max) {
+			font-size: 22px;
+			margin: 30px 15px 15px;
+			text-align: center; 
+		}
+	}
+	&__list {
+		@extend .flex, .flex--column;
+		li {
+			display: block;
+			width: 100%;
+			font-size: 20px;
+			font-weight: 400;
+			color: $key-color-2;
+			margin-bottom: 18px;
+			line-height: 1;
+			@include max-screen($xxs-max) {
+				font-size: 18px;
+				margin-bottom: 15px;
+				text-align: center;
+			}
+			a {
+				position: relative;
+				color: inherit;
+				font-size: inherit;
+				font-weight: inherit;
+				line-height: inherit;
+				&::before {
+					content: '';
+					position: absolute;
+					top: 60%;
+					left: 0;
+					width: 0;
+					height: 2px;
+					background-color: $key-color-1;
+					transform: translateY(-50%);
+					@include transition();
+				}
+				@include hover() {
+					color: $key-color-1;
+					&::before {
+						width: 100%;
+					}
+				}
+			}
+			> ul {
+				@extend .flex, .flex--nowrap, .flex--center-y;
+				@include max-screen($xxs-max) {
+					justify-content: center;
+				}
+				> li {
+					flex: 0 1 auto;
+					width: auto;
+					color: $key-color-1;
+					margin: 10px 50px 0 1px;
+					font-size: 18px;
+					@include max-screen($xxs-max) {
+						margin-right: 25px;
+						margin-left: 25px;
+					}
+					a {
+						@include hover() {
+							color: $key-color-2;
+						}
+						&::before {
+							content: none !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__copyright {
+		width: 100%;
+		padding: 40px 0;
+		border-top: 2px solid $gray-light;
+		margin-left: calc((100vw - 1570px)/2);
+		@include max-screen($xlg-max) {
+			margin-left: calc((100vw - 1370px)/2);
+		}
+		@include max-screen($lg-max) {
+			margin-left: calc((100vw - 1270px)/2);
+		}
+		@include max-screen($md-max) {
+			margin-left: calc((100vw - 1037px)/2);
+		}
+		@include max-screen($sm-max) {
+			margin-left: calc((100vw - 818px)/2);
+		}
+		@include max-screen($xs-max) {
+			margin-left: 0;
+			padding-left: 30px;
+		}
+		@include max-screen($xxs-max) {
+			text-align: center;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		p {
+			max-width: 100%;
+			font-size: 15px;
+			font-weight: 400;
+			margin: 0;
+		}
 	}
 }

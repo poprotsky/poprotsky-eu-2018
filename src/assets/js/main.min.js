@@ -40,29 +40,18 @@ $(document).ready(function(){
 	}
 
     if($.fn.owlCarousel) {
-        $('.slider').owlCarousel({
+        $('.carousel').owlCarousel({
             items: 1,
             margin: 0,
             loop: true,
             nav: true,
-            dots: true,
-            autoplay: true,
+            dots: false,
+            autoplay: false,
             autoplayTimeout: 5000,
             autoplayHoverPause: false,
             stagePadding: 0,
-            navText: ['Poprzedni','Następny'],
-            responsiveClass: true,
-            responsive: {
-                0:{
-                    items: 1
-                },
-                600:{
-                    items: 1
-                },
-                1000:{
-                    items: 1
-                }
-            }
+            navText: ['<i class="ico ico-arrow-left"></i>','<i class="ico ico-arrow-right"></i>'],
+            responsiveClass: true
         });
     }
 

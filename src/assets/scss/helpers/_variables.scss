@@ -60,7 +60,7 @@ $link-color-hover: lighten($key-color-1, 15%);
 $link-weight: $default-font-weight;
 
 // ::selection 
-$selection-bg-color: lighten($key-color-1, 20%);
+$selection-bg-color: $heading-color;
 $selection-color: #fff;
 
 //
@@ -115,6 +115,7 @@ $heading-6-line-height: $heading-line-height;
 // 
 // MEDIA QUERIES
 // 
+$xxs-min: 480px;
 $xxs-max: 767px;
 
 $xs-min: 768px;
@@ -127,6 +128,11 @@ $md-min: 1192px;
 $md-max: 1399px;
 
 $lg-min: 1400px;
-$lg-max: 1679px;
+$lg-max: 1499px;
+
+$xlg-min: 1500px;
+$xlg-max: 1699px;
+
+$xxlg-min: 1700px;
 
 $fullhd-limiter: 1920px;
