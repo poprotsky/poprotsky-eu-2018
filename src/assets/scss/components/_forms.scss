@@ -1,153 +1,47 @@
-//
-// .form
-//
-$form-margin: $default-margin;
-
-//
-// .form__group
-//
-$form-group-margin: 0 0 25px;
-
-//
-// .form__info
-//
-$form-info-opacity: 0.6;
-$form-info-margin: 5px 0 0;
-$form-info-font-size: 80%;
-
-//
-// .form__label
-//
-$form-label-color: $default-font-color;
-$form-label-font-size: $default-font-size;
-$form-label-font-weight: $default-font-weight;
-$form-label-margin: 0 0 10px;
-
-$form-label-forizontal-text-align: left;
-$form-label-forizontal-margin: 16px 0 0;
-$form-label-forizontal-margin-mobile: 0;
-$form-label-forizontal-width: 180px;
-$form-label-forizontal-width-mobile: 100%;
-
-//
-// .form__field
-//
-$form-field-horizontal-margin: 0 0 0 200px;
-$form-field-horizontal-margin-mobile: 0;
-
-//
-// .form__static-control
-//
-$form-static-control-border: 1px solid transparent;
-$form-static-control-color: #000;
-$form-static-control-font-size: $default-font-size;
-$form-static-control-font-weight: $default-font-weight;
-$form-static-control-padding: 15px 0;
-
-//
-// .form__checkbox, .form__radio
-//
-$form-chr-margin: 10px 0;
-
-//
-// .form__actions
-//
-$form-actions-margin: 25px 0 0;
-$form-actions-horizontal-margin: 0 0 0 200px;
-$form-actions-horizontal-margin-mobile: 0;
-
-//
-// placeholder
-//
-$form-placeholder-color: $default-font-color;
-
-//
-// input, select, textarea
-//
-$form-fields-font-family: $default-font-family;
-$form-fields-font-size: $default-font-size;
-$form-fields-font-weight: 400;
-
-$form-fields-border: 1px solid #e2e2e2;
-$form-fields-color: $default-font-color;
-$form-fields-padding: 15px 20px;
-$form-fields-width: 100%;
-
-$form-fields-error-border: #d30c0c;
-$form-fields-focus-border: #C8C8C8;
-$form-fields-focus-shadow: 0 0 5px 1px rgba(0,0,0,0.05);
-$form-fields-disabled-border: #d9d9d9;
-$form-fields-disabled-background: #f2f2f2;
-$form-fields-disabled-color: #999;
-
-//
-// .checkbox, radio
-//
-$chr-jcf-margin: 2px 0 0;
-
-$chr-input-margin: 2px 0 0;
-
-$chr-text-margin: 0 0 0 10px;
-
-$chr-label-color: $default-font-color;
-$chr-label-font-size: $default-font-size;
-$chr-label-font-weight: $default-font-weight;
-$chr-label-text-align: left;
-$chr-label-padding: 0;
-
-$chr-info-margin: 2px 0 0;
-$chr-info-opacity: 0.6;
-$chr-info-font-size: 80%;
-
-
-//---[end vars]-----------------------------------------//
-
 ::-webkit-input-placeholder {
-    color: $form-placeholder-color;
+    color: $key-color-2;
 }
 
 :-moz-placeholder {
-    color: $form-placeholder-color;
+    color: $key-color-2;
     opacity: 1;
 }
 
 ::-moz-placeholder {
-    color: $form-placeholder-color;
+    color: $key-color-2;
     opacity: 1;
 }
 
 :-ms-input-placeholder {
-    color: $form-placeholder-color;
+    color: $key-color-2;
 }
 
 input,
 select,
-textarea {
-    border: $form-fields-border;
-    color: $form-fields-color;
-    font-family: $form-fields-font-family;
-    font-size: $form-fields-font-size;
-    font-weight: $form-fields-font-weight;
+textarea,
+.form__input {
+    display: block;
+    position: relative;
     width: 100%;
-    margin: 0;
-    padding: $form-fields-padding;
-    line-height: inherit;
-    outline: none;
-    @include transition;
-
+    background-color: $gray-light;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    padding: 16px 20px;
+    @include transition();
     &.error {
-	    border-color: $form-fields-error-border;
+	    border-bottom-color: #e74c3c;
 	}
 
     &:focus {
-	    border-color: $form-fields-focus-border;
-	    box-shadow: $form-fields-focus-shadow;
+	    border-color: $key-color-1;
 	}
 
 	&[disabled] {
-	    border-color: $form-fields-disabled-border;
-	    background-color: $form-fields-disabled-background;
-	    color: $form-fields-disabled-color;
+	    
 	}
 }
 
@@ -160,121 +54,36 @@ textarea {
     margin: 0;
     resize: none;
     vertical-align: top;
+    height: 120px;
 }
 
 .form {
     $this: &;
-    margin: $form-margin;
-
     &__group {
-        margin: $form-group-margin;
         position: relative;
-    }
-
-    &__info {
-        opacity: $form-info-opacity;
-        display: block;
-        margin: $form-info-margin;
-        font-size: $form-info-font-size;
+        margin-bottom: 30px;
     }
 
     &__label {
-        color: $form-label-color;
         display: block;
-        font-size: $form-label-font-size;
-        font-weight: $form-label-font-weight;
-        margin: $form-label-margin;
-    }
-
-    &__static-control {
-        border: $form-static-control-border;
-        color: $form-static-control-color;
-        font-size: $form-static-control-font-size;
-        font-weight: $form-static-control-font-weight;
-        padding: $form-static-control-padding;
-        width: 100%;
-    }
-
-    &__checkbox,
-    &__radio {
-        margin: $form-chr-margin;
+        position: relative;
+        padding-left: 30px;
+        font-size: 15px;
+        color: $heading-color;
+        font-weight: 600;
+        margin-bottom: 10px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background-color: $key-color-1;
+        }
     }
 
     &__actions {
-        margin: $form-actions-margin;
-
-        @include max-screen($xs-max) {
-            .btn {
-                width: 100%;
-                clear: both;
-                display: block;
-            }
-        }
+       
     }
-
-    &--horizontal {
-        #{$this}__label {
-            text-align: $form-label-forizontal-text-align;
-            margin: $form-label-forizontal-margin;
-            float: left;
-            width: $form-label-forizontal-width;
-
-            @include max-screen($xs-max) {
-                margin: $form-label-forizontal-margin-mobile;
-                width: $form-label-forizontal-width-mobile;
-            }
-        }
-
-        #{$this}__field {
-            margin: $form-field-horizontal-margin;
-
-            @include max-screen($xs-max) {
-                margin: $form-field-horizontal-margin-mobile;
-            }
-        }
-
-        #{$this}__actions {
-            margin: $form-actions-horizontal-margin;
-
-            @include max-screen($xs-max) {
-                margin: $form-actions-horizontal-margin-mobile;
-            }
-        }
-    }
-}
-
-.checkbox,
-.radio {
-    @extend .flex, .flex--nowrap;
-
-    .jcf-checkbox,
-    .jcf-radio {
-        margin: $chr-jcf-margin;
-    }
-
-	&__input {
-        margin: $chr-input-margin;
-	}
-
-    &__text {
-        margin: $chr-text-margin;
-    }
-
-	&__label {
-        color: $chr-label-color;
-        font-size: $chr-label-font-size;
-        font-weight: $chr-label-font-weight;
-		overflow: hidden;
-		display: block;
-		text-align: left;
-		width: auto;
-		padding: $chr-label-padding;
-	}
-
-	&__info {
-		margin: $chr-info-margin;
-		opacity: $chr-info-opacity;
-		display: block;
-		font-size: $chr-info-font-size;
-	}
 }

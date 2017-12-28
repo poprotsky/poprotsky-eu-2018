@@ -22,14 +22,16 @@ var gulp = require('gulp'),
             scripts_dest: 'src/assets/js',
             scripts: 'src/assets/js/*.min.js',
             fonts: 'src/assets/fonts/*',
-            images: 'src/assets/img/**/*'
+            images: 'src/assets/img/**/*',
+            projects: 'src/projects/**/*'
         },
         dist: {
             html: 'dist',
             styles: 'dist/assets/css',
             scripts: 'dist/assets/js',
             fonts: 'dist/assets/fonts',
-            images: 'dist/assets/img'
+            images: 'dist/assets/img',
+            projects: 'dist/projects'
         },
 		public: {
             styles: '../../public/assets/css',
@@ -80,6 +82,9 @@ gulp.task('build', ['clean', 'scss-to-css', 'vendor-scripts', 'main-js'], functi
 
     var imgs = gulp.src(paths.src.images)
         .pipe(gulp.dest(paths.dist.images));
+
+    var projects = gulp.src(paths.src.projects)
+        .pipe(gulp.dest(paths.dist.projects));
 });
 
 

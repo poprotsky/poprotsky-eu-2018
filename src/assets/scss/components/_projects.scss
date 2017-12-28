@@ -121,6 +121,35 @@
             font-weight: 400;
             color: $key-color-2;
         }
+        &--alt {
+            .projects__item-top {
+                padding: 0;
+                img {
+                    position: static;
+                    width: 100%;
+                    transform: translateX(0);
+                    box-shadow: none;
+                }
+            }
+            .projects__item-title {
+                font-size: 28px;
+                @include max-screen($xs-max) {
+                    font-size: 18px;
+                }
+                &::before {
+                    top: 54%;
+                    @include max-screen($xs-max) {
+                        top: 50%
+                    }
+                }
+            }
+            .projects__item-subtitle {
+                font-size: 22px;
+                @include max-screen($xs-max) {
+                    font-size: 15px;
+                }
+            }
+        }
     }
     
 }

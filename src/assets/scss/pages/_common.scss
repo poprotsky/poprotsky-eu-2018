@@ -2,10 +2,6 @@
 	font-size: $default-lead-font-size;
 }
 
-.relative {
-    position: relative;
-}
-
 .section {
     padding: 150px 0;
     @include max-screen($md-max) {
@@ -66,6 +62,7 @@
     font-weight: 400;
     color: rgba($key-color-2, .07);
     line-height: 1;
+    white-space: nowrap;
     @extend .disabled;
     &--indark {
         color: rgba($key-color-2, .03);
@@ -73,6 +70,7 @@
 }
 
 .heading {
+    $this: &;
     @extend .flex, .flex--end-y, .flex--space-between, .flex--nowrap;
     margin-bottom: 60px;
     @include max-screen($xs-max) {
@@ -106,7 +104,7 @@
             font-size: 26px;
         }
         @include max-screen($xs-max) {
-            font-size: 22px;
+            font-size: 20px;
         }
     }
     &__title {
@@ -119,7 +117,7 @@
             font-size: 45px;
         }
         @include max-screen($xs-max) {
-            font-size: 40px;
+            font-size: 35px;
         }
     }
     &__desc {
@@ -133,6 +131,14 @@
         @include max-screen($xs-max) {
             margin-top: 15px;
             font-size: 20px;
+        }
+    }
+    &--small {
+        #{$this}__subtitle {
+            font-size: 20px;
+        }
+        #{$this}__title {
+            font-size: 35px;
         }
     }
 }
@@ -202,13 +208,110 @@
     }
 }
 
+// contact
+.list-default {
+    &__title {
+        position: relative;
+        display: block;
+        color: $gray;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        padding-left: 30px;
+        @include max-screen($xs-max) {
+            font-size: 18px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left:0;
+            width: 20px;
+            height: 2px;
+            background-color: $gray;
+        }
+    }
+    &__row {
+        @extend .flex, .flex--nowrap;
+        width: 100%;
+        @include max-screen($xs-max) {
+            flex-flow: column nowrap;
+        }
+    }
+    &__item {
+        flex: 1 1 50%;
+        @include max-screen($xs-max) {
+            flex: 1 1 100%;
+            margin-bottom: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        li {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 500;
+            padding: 0 30px;
+            margin-bottom: 5px;
+            @include max-screen($xs-max) {
+                font-size: 18px;
+            }
+            a {
+                position: relative;
+                color: inherit;
+                font-size: inherit;
+                font-weight: inherit;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 60%;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: #fff;
+                    transform: translateY(-50%);
+                    @include transition();
+                }
+                @include hover() {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        ul {
+           @extend .flex, .flex--nowrap, .flex--center-y;
+            > li {
+                flex: 0 1 auto;
+                width: auto;
+                color: #fff;
+                margin: 10px 70px 0 0;
+                font-size: 22px;
+                padding: 0;
+                @include max-screen($xs-max) {
+                    font-size: 18px;
+                }
+                a {
+                    @include hover() {
+                        color: $key-color-2;
+                    }
+                    &::before {
+                        content: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// services homepage
 .list-icon-row {
     @extend .flex, .flex--nowrap;
     @include max-screen($xxs-max) {
         flex-flow: column nowrap;
     }
 }
-
+// services homepage
 .list-icon {
     @extend .flex, .flex--nowrap;
     flex: 0 1 50%;
@@ -273,6 +376,324 @@
                 &::before {
                     width: 100%;
                 }
+            }
+        }
+    }
+}
+
+.intro {
+    &__top {
+        @extend .flex, .flex--space-between, .flex--stretch, .flex--nowrap;
+        position: relative;
+        @include max-screen($sm-max) {
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        &-left {
+            @extend .padding-left-calc;
+            flex: 1 1 auto;
+            position: relative;
+            z-index: 1;
+            padding-top: 130px;
+            padding-bottom: 130px;
+            @include max-screen($sm-max) {
+                width: 100%;
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+            @include max-screen($xs-max) {
+                padding-top: 80px !important;
+                padding-bottom: 80px !important;
+            }
+            .bg-title {
+                left: -120px;
+                bottom: -100px;
+            }
+            .heading {
+                margin-bottom: 0;
+            }
+            .heading__left {
+                position: relative;
+                z-index: 2;
+                width: 50%;
+                @include max-screen($xlg-max) {
+                    width: 70%;
+                }
+                @include max-screen($md-max) {
+                    width: 80%;
+                }
+                @include max-screen($xs-max) {
+                    width: 100%;
+                    padding-right: 50px;
+                }
+            }
+        }
+        &-right {
+            @extend .flex, .flex--stretch;
+            flex: 1 1 auto;
+            max-width: 606px;
+            background-color: $gray-light;
+            position: relative;
+            z-index: 2;
+            @include max-screen($xlg-max) {
+                max-width: 500px;
+            }
+            @include max-screen($sm-max) {
+                display: none;
+            }
+            .blockquote {
+                padding: 6.2vw;
+                @include max-screen($lg-max) {
+                    padding: 4.5vw; 
+                }
+            }
+        }
+        &-btn {
+            display: block;
+            padding: 36px;
+            line-height: 1;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(50%);
+            z-index: 3;
+            background-color: $key-color-1;
+            width: 38vw;
+            cursor: pointer;
+            @include hover() {
+                width: 39vw;
+                &::before {
+                    width: 100%;
+                }
+                .btn-arrow::before {
+                    transform: translateX(5px) translateY(-50%);
+                }
+            }
+            @include max-screen($xlg-max) {
+                width: 45vw;
+                @include hover() {
+                    width: 46vw;
+                }
+            }
+            @include max-screen($sm-max) {
+                width: 50vw;
+                padding: 26px;
+            }
+            @include max-screen($xxs-max) {
+                width: 75vw;
+                padding: 20px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 0;
+                background-color: $alt-color-1;
+                @include transition();
+            }
+            .btn-arrow {
+                color: #fff;
+                font-size: 24px;
+                @include max-screen($sm-max) {
+                    font-size: 22px;
+                }
+                @include max-screen($xxs-max) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    &__bottom {
+        @extend .flex, .flex--column;
+        .carousel {
+            position: relative;
+            z-index: 2;
+            align-self: flex-end;
+            @include max-screen($lg-max) {
+                width: 81vw;
+            }
+            @include max-screen($md-max) {
+                width: 86vw;
+            }
+            @include max-screen($xs-max) {
+                width: 96vw;
+            }
+        }
+        &-desc {
+            @extend .padding-left-calc;
+            position: relative;
+            z-index: 1;
+            background-color: $gray-light;
+            padding-right: 200px;
+            padding-bottom: 130px;
+            padding-top: 250px;
+            margin-top: -150px;
+            overflow: hidden;
+            @include max-screen($xs-max) {
+                padding-right: 80px;
+                padding-bottom: 80px;
+                padding-top: 200px;
+            }
+            @include max-screen($xxs-max) {
+                padding-right: 50px;
+                padding-bottom: 60px;
+            }
+            .bg-title {
+                left: -100px;
+                bottom: -80px;
+            }
+            &--alt {
+                padding-right: 50px;
+                @include max-screen($xs-max) {
+                    padding-top: 250px;
+                    padding-bottom: 150px;
+                    padding-right: 0;
+                }
+                @include max-screen($xxs-max) {
+                    padding: 200px 0 60px !important;
+                }
+            }
+        }
+        &-text {
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            @include max-screen($xs-max) {
+                font-size: 24px;
+            }
+            @include max-screen($xxs-max) {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &--simple {
+        .intro__top-left {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            .bg-title {
+                left: 15%;
+            }
+        }
+        .heading__left {
+            width: 75%;
+            @include max-screen($md-max) {
+                width: 100%;
+                padding-right: 12vw;
+            }
+        }
+    }
+}
+
+.blockquote {
+    @extend .flex, .flex--center-y;
+    blockquote {
+        padding: 0;
+        margin: 0;
+        color: $heading-color;
+        background-color: transparent;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.5;
+        position: relative;
+        @include max-screen($lg-max) {
+            font-size: 18px;
+        }
+        &::before {
+            content: '“';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            font-size: 65px;
+            font-style: normal;
+            color: $key-color-1;
+            font-family: $default-font-family;
+            line-height: 1;
+            margin-bottom: 30px;
+            @include max-screen($lg-max) {
+                font-size: 60px;
+            }
+        }
+        strong {
+            font-weight: 700;
+        }
+    }
+    &__author {
+        position: relative;
+        margin-top: 25px;
+        display: block;
+        font-size: 18px;
+        font-weight: 400;
+        color: $key-color-2;
+        padding-left: 30px;
+        @include max-screen($lg-max) {
+            font-size: 16px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background-color: $key-color-2;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.numbers {
+    @extend .flex, .flex--nowrap;
+    width: 100%;
+    @include max-screen($xxs-max) {
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    &__item {
+        flex: 0 1 33.3333%;
+        @extend .flex, .flex--column;
+        @include max-screen($xxs-max) {
+            margin-bottom: 50px;
+            align-items: center;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-title {
+            display: block;
+            color: $heading-color;
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 15px;
+            padding-right: 30px;
+            @include max-screen($md-max) {
+                font-size: 40px;
+            }
+            @include max-screen($xxs-max) {
+                padding: 0 15px;
+                text-align: center;
+            }
+        }
+        &-desc {
+            display: block;
+            color: $key-color-2;
+            font-size: 26px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0;
+            padding-right: 30px;
+            @include max-screen($md-max) {
+                font-size: 22px;
+            }
+            @include max-screen($xxs-max) {
+                padding: 0 15px;
+                text-align: center;
             }
         }
     }

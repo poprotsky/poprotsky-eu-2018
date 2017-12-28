@@ -1,7 +1,10 @@
 .container {
     &--thin {
-        max-width: 900px;
+        width: 760px !important;
         margin: 0 auto;
+        @include max-screen($xs-max) {
+            width: calc(100% - 30px) !important;
+        }
     }
     &--default {
         max-width: 1040px;

@@ -4,21 +4,8 @@
         background-color: $gray-light;
         padding: 100px 11vw 250px 0;
         margin-bottom: -150px;
-        padding-left: calc((100vw - 1570px)/2);
-        @include max-screen($xlg-max) {
-            padding-left: calc((100vw - 1370px)/2);
-        }
-        @include max-screen($lg-max) {
-            padding-left: calc((100vw - 1270px)/2);
-        }
-        @include max-screen($md-max) {
-            padding-left: calc((100vw - 1037px)/2);
-        }
-        @include max-screen($sm-max) {
-            padding-left: calc((100vw - 818px)/2);
-        }
+        @extend .padding-left-calc;
         @include max-screen($xs-max) {
-            padding-left: 30px;
             padding-right: 30px;
         }
         @include max-screen($xxs-max) {

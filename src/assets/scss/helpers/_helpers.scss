@@ -1,4 +1,59 @@
+.desktop-resolution {
+    @include max-screen($sm-max) {
+        display: none;
+    }
+}
 
+.mobile-resolution {
+    display: none;
+    @include max-screen($sm-max) {
+        display: block;
+    }
+}
+
+.margin-left-calc {
+    margin-left: calc((100vw - 1570px)/2) !important;
+    @include max-screen($xlg-max) {
+        margin-left: calc((100vw - 1370px)/2) !important;
+    }
+    @include max-screen($lg-max) {
+        margin-left: calc((100vw - 1270px)/2) !important;
+    }
+    @include max-screen($md-max) {
+        margin-left: calc((100vw - 1037px)/2) !important;
+    }
+    @include max-screen($sm-max) {
+        margin-left: calc((100vw - 818px)/2) !important;
+    }
+    @include max-screen($xs-max) {
+        margin-left: 0 !important;
+    }
+}
+
+.padding-left-calc {
+    padding-left: calc((100vw - 1570px)/2) !important;
+    @include max-screen($xlg-max) {
+        padding-left: calc((100vw - 1370px)/2) !important;
+    }
+    @include max-screen($lg-max) {
+        padding-left: calc((100vw - 1270px)/2) !important;
+    }
+    @include max-screen($md-max) {
+        padding-left: calc((100vw - 1037px)/2) !important;
+    }
+    @include max-screen($sm-max) {
+        padding-left: calc((100vw - 818px)/2) !important;
+    }
+    @include max-screen($xs-max) {
+        padding-left: 30px !important;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+//
 // flex
 //
 .flex {

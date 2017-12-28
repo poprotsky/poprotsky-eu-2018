@@ -5,7 +5,7 @@
 		top: 0;
 		left: 0;
 		bottom: 0;
-		z-index: 4;
+		z-index: 5;
 		width: 100px;
 		height: inherit;
 		background-color: $key-color-1;
@@ -14,7 +14,7 @@
 			flex-flow: row nowrap;
 			right: 0;
 			width: 100%;
-			height: 100px;
+			height: 90px;
 			.is-nav-open & {
 				background-color: transparent;
 			}
@@ -29,7 +29,9 @@
 		height: 100px;
 		@include transition();
 		@include max-screen($xs-max) {
-			flex: 0 0 100px;
+			flex: 0 0 90px;
+			width: 90px;
+			height: 90px;
 		}
 		@include max-screen($xxs-max) {
 			height: 70px;
@@ -53,7 +55,8 @@
 		cursor: pointer;
 		@include transition();
 		@include max-screen($xs-max) {
-			flex: 0 0 100px;
+			flex: 0 0 90px;
+			height: 90px;
 		}
 		@include max-screen($xxs-max) {
 			flex: 0 0 70px;
@@ -165,7 +168,7 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		z-index: 3;
+		z-index: 4;
 		background-color: $key-color-1;
 		transform: translateX(-100%);
 		transition: .6s ease .4s;
