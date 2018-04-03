@@ -20,14 +20,14 @@
 
 @mixin hover($self: false) {
     @if $self {
-    	@include min-screen($lg-min) {
+    	@include min-screen($sm-min) {
 	        &,
 	        &:hover {
 	            @content;
 	        }
     	}
     } @else {
-    	@include min-screen($lg-min) {
+    	@include min-screen($sm-min) {
 	        &:hover {
 	            @content;
 	        }

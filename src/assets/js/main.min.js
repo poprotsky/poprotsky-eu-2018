@@ -50,6 +50,9 @@ $(document).ready(function(){
             autoplayTimeout: 5000,
             autoplayHoverPause: false,
             stagePadding: 0,
+            smartSpeed: 500,
+            fluidSpeed: 500,
+            navSpeed: 500,
             navText: ['<i class="ico ico-arrow-left"></i>','<i class="ico ico-arrow-right"></i>'],
             responsiveClass: true
         });

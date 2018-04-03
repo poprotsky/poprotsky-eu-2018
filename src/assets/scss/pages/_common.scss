@@ -132,6 +132,10 @@
             margin-top: 15px;
             font-size: 20px;
         }
+        &--small {
+            font-size: 22px;
+            margin-top: 20px;
+        }
     }
     &--small {
         #{$this}__subtitle {
